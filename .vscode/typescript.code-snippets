@@ -1,0 +1,20 @@
+{
+	"react-func": {
+		"prefix": "react-func",
+		"scope": "typescriptreact",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"export const ${1:Name} = (): JSX.Element => (",
+			"\t${0}",
+			")"
+		]
+	},
+	"export-default": {
+		"prefix": "export-default",
+		"scope": "typescript",
+		"body": [
+			"export { ${1:Component} as default } from \"./${1}\""
+		]
+	}
+}
