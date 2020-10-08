@@ -1,11 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 import "./App.css"
 import ConnectedTicker from "features/ConnectedTicker"
+import { ComposeExample } from "ComposeExample"
 
 function App() {
   return (
     <div className="App">
-      <ConnectedTicker/>
+      <ComposeExample header={<h1>This is the connected ticker</h1>}>
+        <ConnectedTicker/>
+      </ComposeExample>
     </div>
   )
 }
