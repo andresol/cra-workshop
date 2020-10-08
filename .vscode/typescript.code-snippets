@@ -5,9 +5,9 @@
 		"body": [
 			"import React from \"react\"",
 			"",
-			"export const ${1:Name} = (): JSX.Element => (",
-			"\t${0}",
-			")"
+			"export const ${1:Name} = (): JSX.Element => {",
+			"\treturn (<>${0}</>)",
+			"}"
 		]
 	},
 	"export-default": {
