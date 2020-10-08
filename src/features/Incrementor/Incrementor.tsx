@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, memo } from "react"
 
 interface IncrementorProps {
 	limit: number
@@ -19,3 +19,5 @@ export const Incrementor = ({limit}: IncrementorProps): JSX.Element => {
 		</>
 	)
 }
+
+export default memo(Incrementor)
