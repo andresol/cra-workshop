@@ -1,25 +1,16 @@
 import React from "react"
 import "./App.css"
-import ConnectedTicker from "features/ConnectedTicker"
-import { ComposeExample } from "ComposeExample"
+import Repeat from "features/Repeat"
 import BigBorder from "features/BigBorder"
-import EitherAOrB from "features/EitherAOrB"
 
 function App() {
   return (
     <div className="App">
-      <EitherAOrB a={
+      <Repeat>
         <BigBorder>
-          <ComposeExample header={<h1>This is the connected ticker</h1>}>
-            <ConnectedTicker/>
-          </ComposeExample>
+          <p>This is a child</p>
         </BigBorder>
-      }
-      b={
-        <ComposeExample header={<h1>This is the connected ticker</h1>}>
-          <ConnectedTicker/>
-        </ComposeExample>
-      }/>
+      </Repeat>
     </div>
   )
 }

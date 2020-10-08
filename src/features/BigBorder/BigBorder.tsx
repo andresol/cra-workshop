@@ -11,8 +11,9 @@ const borderStyle = {
 	border: theme.borderWidth+"px solid #f00"
 }
 
-export const BigBorder = ({children}: BigBorderProps): JSX.Element => (
-	<div style={borderStyle}>
+export const BigBorder = ({children, ...rest}: BigBorderProps): JSX.Element => (
+	// rest["data-index"] = #
+	<div style={borderStyle} {...rest}>
 		{children}
 	</div>
 )
