@@ -1,17 +1,15 @@
 import React from "react"
 import "./App.css"
-import Repeat from "features/Repeat"
-import BigBorder from "features/BigBorder"
+import Router from "features/Router"
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <Repeat>
-        <BigBorder>
-          <p>This is a child</p>
-        </BigBorder>
-      </Repeat>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Router/>
+      </div>
+    </BrowserRouter>
   )
 }
 
