@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Switch, Redirect, useLocation } from "react-router-dom"
 import Incrementor from "features/Incrementor"
 import { ArticlesRoute } from "./ArticlesRoute"
+import { RouteTickerMessage, RouteRangeMinMax } from "features/RouteParams"
 
 export const Router = (): JSX.Element => {
 	const { pathname } = useLocation()
@@ -14,8 +15,14 @@ export const Router = (): JSX.Element => {
 				<Route path="/incrementor">
 					<Incrementor limit={10}/>
 				</Route>
+				<Route path="/ticker/:message">
+					<RouteTickerMessage/>
+				</Route>
 				<Route path="/articles/:articleId">
 					<ArticlesRoute/>
+				</Route>
+				<Route path="/range/:min/:max">
+					<RouteRangeMinMax/>
 				</Route>
 				<Route path="/" exact>
 					<h1>Home</h1>
