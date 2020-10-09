@@ -8,6 +8,7 @@ function App() {
     <BrowserRouter>
       <NavLink to="/" exact>Home</NavLink>
       <NavLink to="/range/5/50">Range 5-50</NavLink>
+      <NavLink to="/incrementor">Incrementor</NavLink>
       <div className="App">
         <Router/>
       </div>

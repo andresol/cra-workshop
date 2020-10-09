@@ -1,15 +1,20 @@
-import React from "react"
+import React, { Suspense, lazy } from "react"
 import { Route, Switch, Redirect, useLocation } from "react-router-dom"
-import Incrementor from "features/Incrementor"
 import { ArticlesRoute } from "./ArticlesRoute"
 import { RouteTickerMessage, RouteRangeMinMax } from "features/RouteParams"
 import Messages from "features/Messages"
+import { waitFor } from "utils/waitFor"
+
+const Incrementor = lazy(async () => {
+	await waitFor(1000)
+	return import("features/Incrementor")
+})
 
 export const Router = (): JSX.Element => {
 	const { pathname } = useLocation()
 
 	return (
-		<>
+		<Suspense fallback={<p>One sec...</p>}>
 			<Switch>
 				<Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
 
@@ -38,6 +43,6 @@ export const Router = (): JSX.Element => {
 					<h1>404 not found</h1>
 				</Route>
 			</Switch>
-		</>
+		</Suspense>
 	)
 }
