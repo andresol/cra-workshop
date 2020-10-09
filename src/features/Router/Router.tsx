@@ -4,6 +4,7 @@ import { ArticlesRoute } from "./ArticlesRoute"
 import { RouteTickerMessage, RouteRangeMinMax } from "features/RouteParams"
 import Messages from "features/Messages"
 import UseEffect from "features/UseEffect"
+import ListPosts from "features/ListPosts"
 
 const loadIncrementor = () => import("features/Incrementor")
 const Incrementor = lazy(() => loadIncrementor())
@@ -31,6 +32,10 @@ export const Router = (): JSX.Element => {
 				</Route>
 				<Route path="/range/:min/:max">
 					<RouteRangeMinMax/>
+				</Route>
+
+				<Route path="/posts">
+					<ListPosts/>
 				</Route>
 
 				<Route path="/loop-example">
