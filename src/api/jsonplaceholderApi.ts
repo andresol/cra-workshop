@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export interface Post {
 	userId: number
 	id: number
@@ -16,5 +18,14 @@ export const fetchPosts = async (doThrow: boolean = false) => {
 	}
 
 	const data: Post[] = await response.json()
+	return data
+}
+
+export const fetchPostsAxios = async () => {
+	const { data } = await axios.request<Post[]>({
+		url: "http://jsonplaceholder.typicode.com/posts",
+		timeout: 3000,
+		validateStatus: (status) => status !== 200
+	})
 	return data
 }

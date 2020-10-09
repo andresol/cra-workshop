@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react"
-import { fetchPosts, Post } from "api/jsonplaceholderApi"
+import React, { useEffect, useState, useCallback } from "react"
+import { fetchPostsAxios, Post } from "api/jsonplaceholderApi"
 
 export const ListPosts = (): JSX.Element => {
 	const [posts, setPosts] = useState<Post[]>([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState<Error | undefined>(undefined)
 
-	useEffect(() => {
-		const dataFetch = async () => {
-			setIsLoading(true)
-			setError(undefined)
-			try {
-				const data = await fetchPosts()
-				setPosts(data)
-			} catch (error) {
-				setError(error)
-			} finally {
-				setIsLoading(false)
-			}
+	const dataFetch = useCallback(async () => {
+		setIsLoading(true)
+		setError(undefined)
+		try {
+			const data = await fetchPostsAxios()
+			setPosts(data)
+		} catch (error) {
+			setError(error)
+		} finally {
+			setIsLoading(false)
 		}
-		dataFetch()
 	}, [])
+
+	useEffect(() => {
+		dataFetch()
+	}, [dataFetch])
 
 	if (error) {
 		return <p>Oops {error.message}</p>
