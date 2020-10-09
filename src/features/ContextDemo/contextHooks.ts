@@ -1,6 +1,11 @@
 import { createContext, useContext } from "react"
 
-export const AwesomeContext = createContext<string>(undefined as any)
+export interface AwesomeContextData {
+	message: string
+	reset: () => void
+}
+
+export const AwesomeContext = createContext<AwesomeContextData>(undefined as any)
 
 export const useMessageContext = () => {
 	const data = useContext(AwesomeContext)

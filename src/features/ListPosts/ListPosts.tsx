@@ -24,7 +24,7 @@ export const ListPosts = ({sortDirection}: ListPostsProps): JSX.Element => {
 	const posts = useMemo(() =>
 		postSorter(value ?? [], sortDirection), [value, sortDirection])
 
-	const message = useMessageContext()
+	const { message, reset } = useMessageContext()
 
 	if (error) {
 		return <p>Oops {error.message}</p>
@@ -35,7 +35,7 @@ export const ListPosts = ({sortDirection}: ListPostsProps): JSX.Element => {
 
 	return (
 		<>
-			<h1>{message}</h1>
+			<h1 onDoubleClick={reset}>{message}</h1>
 			<ul>
 				{posts.map(({id, title}) => (
 					<li key={id}>{title}</li>
