@@ -23,7 +23,7 @@ export const ListPosts = (): JSX.Element => {
 	}, [])
 
 	if (error) {
-		return <p>Oops</p>
+		return <p>Oops {error.message}</p>
 	}
 	if (isLoading) {
 		return <p>One sec...</p>
