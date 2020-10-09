@@ -35,7 +35,7 @@ export const Router = (): JSX.Element => {
 				</Route>
 
 				<Route path="/user-articles">
-					<ListPosts/>
+						<ListPosts/>
 				</Route>
 
 				<Route path="/loop-example">

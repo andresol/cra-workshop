@@ -1,6 +1,7 @@
 import React, { useMemo } from "react"
 import { fetchPostsAxios, Post } from "api/jsonplaceholderApi"
 import { useAsync } from "hooks/useAsync"
+import { useMessageContext } from "features/ContextDemo"
 
 const compare = new Intl.Collator(navigator.language).compare
 
@@ -23,6 +24,8 @@ export const ListPosts = ({sortDirection}: ListPostsProps): JSX.Element => {
 	const posts = useMemo(() =>
 		postSorter(value ?? [], sortDirection), [value, sortDirection])
 
+	const message = useMessageContext()
+
 	if (error) {
 		return <p>Oops {error.message}</p>
 	}
@@ -31,10 +34,13 @@ export const ListPosts = ({sortDirection}: ListPostsProps): JSX.Element => {
 	}
 
 	return (
-		<ul>
-			{posts.map(({id, title}) => (
-				<li key={id}>{title}</li>
-			))}
-		</ul>
+		<>
+			<h1>{message}</h1>
+			<ul>
+				{posts.map(({id, title}) => (
+					<li key={id}>{title}</li>
+				))}
+			</ul>
+		</>
 	)
 }
