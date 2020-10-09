@@ -2,6 +2,7 @@
   "name": "workshop",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
