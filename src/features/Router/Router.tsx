@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, useLocation } from "react-router-dom"
 import Incrementor from "features/Incrementor"
 import { ArticlesRoute } from "./ArticlesRoute"
 import { RouteTickerMessage, RouteRangeMinMax } from "features/RouteParams"
+import Messages from "features/Messages"
 
 export const Router = (): JSX.Element => {
 	const { pathname } = useLocation()
@@ -24,6 +25,11 @@ export const Router = (): JSX.Element => {
 				<Route path="/range/:min/:max">
 					<RouteRangeMinMax/>
 				</Route>
+
+				<Route path="/loop-example">
+					<Messages/>
+				</Route>
+
 				<Route path="/" exact>
 					<h1>Home</h1>
 				</Route>
