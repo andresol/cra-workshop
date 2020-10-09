@@ -34,7 +34,7 @@ export const Router = (): JSX.Element => {
 					<RouteRangeMinMax/>
 				</Route>
 
-				<Route path="/posts">
+				<Route path="/user-articles">
 					<ListPosts/>
 				</Route>
 

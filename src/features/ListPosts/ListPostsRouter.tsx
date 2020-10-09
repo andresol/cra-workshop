@@ -1,18 +1,20 @@
 import React from "react"
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route, Redirect, useRouteMatch } from "react-router-dom"
 import { ListPosts } from "./ListPosts"
 
 export const ListPostsRouter = (): JSX.Element => {
+	const { path, url } = useRouteMatch()
+
 	return (
 		<Switch>
-			<Route path="/posts/asc">
+			<Route path={`${path}/asc`}>
 				<ListPosts sortDirection="asc"/>
 			</Route>
-			<Route path="/posts/desc">
+			<Route path={`${path}/desc`}>
 				<ListPosts sortDirection="desc"/>
 			</Route>
-			<Route path="/posts">
-				<Redirect to="/posts/asc"/>
+			<Route path={path}>
+				<Redirect to={`${url}/asc`}/>
 			</Route>
 		</Switch>
 	)
