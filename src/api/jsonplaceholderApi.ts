@@ -25,7 +25,7 @@ export const fetchPostsAxios = async () => {
 	const { data } = await axios.request<Post[]>({
 		url: "http://jsonplaceholder.typicode.com/posts",
 		timeout: 3000,
-		validateStatus: (status) => status !== 200
+		validateStatus: (status) => status === 200
 	})
 	return data
 }
