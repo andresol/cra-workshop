@@ -1,0 +1,1 @@
+export { UseEffectContainer as default } from "./UseEffectContainer"

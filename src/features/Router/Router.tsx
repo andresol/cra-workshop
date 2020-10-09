@@ -3,12 +3,10 @@ import { Route, Switch, Redirect, useLocation } from "react-router-dom"
 import { ArticlesRoute } from "./ArticlesRoute"
 import { RouteTickerMessage, RouteRangeMinMax } from "features/RouteParams"
 import Messages from "features/Messages"
-import { waitFor } from "utils/waitFor"
+import UseEffect from "features/UseEffect"
 
-const Incrementor = lazy(async () => {
-	await waitFor(1000)
-	return import("features/Incrementor")
-})
+const loadIncrementor = () => import("features/Incrementor")
+const Incrementor = lazy(() => loadIncrementor())
 
 export const Router = (): JSX.Element => {
 	const { pathname } = useLocation()
@@ -17,6 +15,10 @@ export const Router = (): JSX.Element => {
 		<Suspense fallback={<p>One sec...</p>}>
 			<Switch>
 				<Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
+
+				<Route path="/use-effect">
+					<UseEffect/>
+				</Route>
 
 				<Route path="/incrementor">
 					<Incrementor limit={10}/>
