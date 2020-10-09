@@ -1,1 +1,1 @@
-export { ListPosts as default } from "./ListPosts"
+export { ListPostsRouter as default } from "./ListPostsRouter"
