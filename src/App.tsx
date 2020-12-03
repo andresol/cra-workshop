@@ -1,9 +1,11 @@
-import ListMessages from "./ListMessages"
+import Repeat from "./Repeat"
 
 function App() {
   return (
     <>
-      <ListMessages/>
+      <Repeat count={5}>
+        <p>Repeated message</p>
+      </Repeat>
     </>
   )
 }
