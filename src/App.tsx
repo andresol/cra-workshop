@@ -1,5 +1,5 @@
-import Repeat from "./features/Repeat"
-import ListMessages from "./features/ListMessages"
+import Repeat from "features/Repeat"
+import ListMessages from "features/ListMessages"
 
 function App() {
   return (
