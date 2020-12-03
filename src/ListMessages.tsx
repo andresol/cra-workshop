@@ -1,3 +1,5 @@
+import React from "react"
+
 const messages = {
 	"consectetur": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 	"sagittis": "Mauris tristique libero eu ex sagittis, ac bibendum ipsum pellentesque.",
@@ -16,4 +18,16 @@ export const ListMessages = () => (
 	</ul>
 )
 
-export default ListMessages
+export const ListMessagesNoJSX = () => (
+	React.createElement("ul", {},
+
+		Object.entries(messages).map(([id, message]) => (
+
+			React.createElement("li", { key: id, "data-id": id }, message)
+
+		))
+
+	)
+)
+
+export default ListMessagesNoJSX
