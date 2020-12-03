@@ -7,3 +7,13 @@ const messages = {
 	"ipsum": "Nulla porta dolor a leo commodo, et ornare orci auctor.",
 	"dolor": "Aenean efficitur leo ac lorem imperdiet tincidunt."
 }
+
+export const ListMessages = () => (
+	<ul>
+		{Object.entries(messages).map(([id, message]) => (
+			<li key={id} data-id={id}>{message}</li>
+		))}
+	</ul>
+)
+
+export default ListMessages

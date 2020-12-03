@@ -1,9 +1,9 @@
-import LoopExample from "./LoopExample"
+import ListMessages from "./ListMessages"
 
 function App() {
   return (
     <>
-      <LoopExample/>
+      <ListMessages/>
     </>
   )
 }
