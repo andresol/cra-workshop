@@ -4,7 +4,7 @@ import Incrementor from "./Incrementor"
 function App() {
   return (
     <>
-      <HelloWorld/>
+      <HelloWorld newHeading="Goodbye from app"/>
       <Incrementor/>
     </>
   )

@@ -19,12 +19,16 @@ const onButtonClick = () => {
 // 	)
 // }
 
-export const HelloWorld = () => {
+interface HelloWorldProps {
+	newHeading: string
+}
+
+export const HelloWorld = (props: HelloWorldProps) => {
 	let text = "Hello world"
 	const [heading, setHeading] = useState("Hello world")
 
 	const onBtnClick = () => {
-		setHeading("Goodbye world")
+		setHeading(props.newHeading)
 		text = "Goodbye world"
 	}
 
