@@ -1,6 +1,8 @@
+import HelloWorld from "./HelloWorld"
+
 function App() {
   return (
-    <h1>Hello world!</h1>
+    <HelloWorld/>
   )
 }
 
